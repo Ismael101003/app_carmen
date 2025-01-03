@@ -3,7 +3,7 @@
     <h2 class="text-center">Horarios de Misa y Confesión</h2>
 
     <div class="card mt-4">
-      <div class="card-header bg-primary text-center">Horarios de Misa</div>
+      <div class="card-header bg-info text-dark text-center">Horarios de Misa</div>
       <div class="card-body">
         <ul>
           <li><strong>Lunes a Viernes:</strong> 8:00 AM</li>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="card mt-4">
-      <div class="card-header bg-primary text-center">
+      <div class="card-header bg-info text-dark text-center">
         Horarios de Confesión
       </div>
       <div class="card-body">
