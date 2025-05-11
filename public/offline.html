@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Sin conexión - Parroquia Nuestra Señora del Carmen</title>
+  <style>
+    body {
+      font-family: 'Lato', Arial, sans-serif;
+      background-color: #F5F5DC;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .offline-container {
+      max-width: 500px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #8B5A2B;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: #8B5A2B;
+    }
+    .retry-btn {
+      background-color: #8B5A2B;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .retry-btn:hover {
+      background-color: #6d4522;
+    }
+    .cached-content {
+      margin-top: 30px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+    .cached-link {
+      display: block;
+      margin: 10px 0;
+      color: #1E3A8A;
+      text-decoration: none;
+    }
+    .cached-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-container">
+    <div class="icon">📶</div>
+    <h1>Sin conexión a Internet</h1>
+    <p>No se puede acceder al contenido en este momento porque no hay conexión a Internet.</p>
+    <button class="retry-btn" onclick="window.location.reload()">Intentar nuevamente</button>
+    
+    <div class="cached-content">
+      <h2>Contenido disponible sin conexión:</h2>
+      <a href="/" class="cached-link">Página de inicio</a>
+      <a href="/HorarioMisa" class="cached-link">Horarios de Misa</a>
+      <a href="/ministeriospage" class="cached-link">Ministerios</a>
+    </div>
+  </div>
+</body>
+</html>

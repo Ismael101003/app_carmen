@@ -1,34 +1,46 @@
 /* eslint-disable no-console */
 
-import { register } from "register-service-worker";
+import { register } from 'register-service-worker'
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
-    ready() {
+    ready () {
       console.log(
-        "App is being served from cache by a service worker.\n" +
-          "For more details, visit https://goo.gl/AFskqB"
-      );
+        'La aplicación está siendo servida desde caché por un service worker.\n' +
+        'Para más detalles, visita https://goo.gl/AFskqB'
+      )
     },
-    registered() {
-      console.log("Service worker has been registered.");
+    registered () {
+      console.log('Service worker ha sido registrado.')
     },
-    cached() {
-      console.log("Content has been cached for offline use.");
+    cached () {
+      console.log('El contenido ha sido cacheado para uso offline.')
     },
-    updatefound() {
-      console.log("New content is downloading.");
+    updatefound () {
+      console.log('Descargando nuevo contenido.')
     },
-    updated() {
-      console.log("New content is available; please refresh.");
+    updated () {
+      console.log('Nuevo contenido disponible; por favor actualiza la página.')
+      // Aquí puedes mostrar una notificación al usuario para que actualice
+      const updateNotification = document.createElement('div');
+      updateNotification.className = 'update-notification';
+      updateNotification.innerHTML = `
+        <div class="update-notification-content">
+          <p>¡Hay una nueva versión disponible!</p>
+          <button id="update-button">Actualizar ahora</button>
+        </div>
+      `;
+      document.body.appendChild(updateNotification);
+      
+      document.getElementById('update-button').addEventListener('click', () => {
+        window.location.reload();
+      });
     },
-    offline() {
-      console.log(
-        "No internet connection found. App is running in offline mode."
-      );
+    offline () {
+      console.log('No hay conexión a internet. La aplicación está funcionando en modo offline.')
     },
-    error(error) {
-      console.error("Error during service worker registration:", error);
-    },
-  });
+    error (error) {
+      console.error('Error durante el registro del service worker:', error)
+    }
+  })
 }
